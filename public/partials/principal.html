@@ -1,0 +1,37 @@
+
+<!-- Cabeçalho -->
+<div class="jumbotron">
+    <h1 class="text-center">Biblioteca</h1>
+</div>
+
+<p ng-show="mensagem_sucesso.length" class="alert alert-success">{{mensagem_sucesso}}</p>
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- Filtro para busca -->
+        <form>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="/livros/new" class="btn btn-primary">Novo Livro</a>
+                </span>
+                <!-- ng-model: tow-way data binging premite tanto escrever quanto ler -->
+                <input ng-model="filtro" class="form-control" placeholder="Filtrar"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Resposta da Busca -->
+<div class="row">
+    <!-- foreach do angular ng-repeat objeto in lista | filter: filtro criado -->
+    <div class="col-xs-4 painel-animado" ng-repeat="livro in livros| filter:filtro">
+
+        <!-- lacunas criadas para na requisição da página, a mesma ser reconstruída substituindo os valores livro.nome e livro.img-->
+        <meu-painel valor="{{livro.nome}}">
+            <img src="{{livro.img}}" class="img-responsive center-block" alt="{{livro.nome}}"/>
+            <a href="/livros/edit/{{livro._id}}" class="btn btn-primary btn-block">Editar</a>
+            <button ng-click="remover(livro)"  class="btn btn-danger btn-block">Remover</button>
+
+        </meu-painel>
+    </div>
+</div>

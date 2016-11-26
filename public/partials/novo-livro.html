@@ -1,0 +1,61 @@
+<!-- Página que vai me permitir cadastrar novo livro -->
+
+
+<!-- bloco título da página que usa two way data binding, quando o nome é preenchido no formulário o campo livro.nome que está pendurano no scope é modificado, e este valor tbm é automáticamente -->
+<div class="page-header text-center">
+    <h1>{{livro.nome}}</h1>
+</div>
+
+<!-- novalidate me permite cancelar a validação do html5. Pq ou eu uso a validação do html5 ou a validação do angular, e eu quero usar a validação do html 5, q tenho mais liberdade 
+nas mensagens a serem exibidas-->
+<!-- ng-submit é uma diretiva que funciona como uma função onsubmit do javascript. E me permite chamar a minha função submeter() quando for dado um submit no nosso formulário, que vai ser responsável por cadastrar meu livro-->
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+    <div class="col-xs-6">
+
+        <!-- mensagem de sucesso, caso o livro tenha sido cadastrado. o ng-show exibe se for true. e o mensagem.length retorna a quantidade de elementos na minha string mensagem e se ela for 0
+            o ng-show vai ser false, pq 0 é false no javascript. -->
+        <p ng-show="mensagem_sucesso.length" class="alert alert-success">{{mensagem_sucesso}}</p>
+        <p ng-show="mensagem_falha.length" class="alert alert-danger">{{mensagem_falha}}</p>
+
+        <div class="form-group">
+            <label>Nome Livro</label>
+
+            <!-- ng.model permite eu fazer uso do two way data binding, tanto ler quanto escrever na minha variável que está pendurada no scope no controller -->
+            <!-- vou colocar o atributo required do html5, que meu angular vai usar este atributo para gerar as validações -->
+            <input ng-model="livro.nome" name="nome" class="form-control" required>
+
+            <!-- ng-show só exibe a mensagem se ele for true. Eu crio uma validação no qual se formulário foi submetido 'formulario.submitted e formlario.nome.$error.required (chamo pelos names) me retornar um erro de requiremento vai retornar true e exibir a mensagem-->
+            <span ng-show="formulario.$submitted && formulario.nome.$error.required" class="form-control alert-danger">Nome é Obrigatório!</span>
+        </div>
+
+        <div class="form-group">
+            <label>Nome Autor</label>
+            <input ng-model="livro.autor" name="autor" class="form-control" required>
+            <span ng-show="formulario.$submitted && formulario.autor.$error.required" class="form-control alert-danger">Autor é Obrigatório!</span>
+        </div>
+
+        <div class="form-group">
+            <label>URL Imagem</label>
+            <input ng-model="livro.img" name="img" class="form-control" required>
+            <span ng-show="formulario.$submitted && formulario.img.$error.required" class="form-control alert-danger">Imagem é Obrigatório!</span>
+        </div>
+
+        <div class="form-group" ng-controller="UsuarioController">
+            <label>Aluguel</label>
+            <select name="aluguel" class="form-control"
+                    ng-model="livro.aluguel" 
+                    ng-options="usuario._id as usuario.nome for usuario in usuarios">
+                <option value="">Selecione um Usuário</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        <a href="/" class="btn btn-primary">Voltar </a>
+    </div>
+    <div class="col-xs-6">
+        <!-- minha diretiva que permite passar as informações da minha image para que ela seja exibida -->
+        <minha-foto url="{{livro.img}}" nome="{{livro.nome}}"></minha-foto>
+    </div>
+</form>

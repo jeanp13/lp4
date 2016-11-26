@@ -1,0 +1,30 @@
+<div class="page-header text-center">
+    <h1>Título Livro</h1>
+</div>
+
+<form name="formulario" class="row">
+    <div class="col-md-6">
+        
+        <div class="form-group">
+            <label>Nome Livro</label>
+            <input name="nome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Nome Autor</label>
+            <input name="autor" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>URL Imagem</label>
+            <input name="img" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        <a href="/" class="btn btn-primary">Voltar </a>
+    </div>
+    <div class="col-md-6">
+        <minha-foto url="{{livro.img}}" nome="{{livro.nome}}"></minha-foto>
+    </div>
+</form>

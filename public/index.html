@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- diretiva ng-app: é uma diretiva que coloca nosso DOM sobre a supervisão do Angular, e nosso HTML passa a ser um documento Angular -->
+<html lang="pt-br" ng-app="biblioteca">
+    <head>
+        <!-- Tag que especifica a base url de todas as url relativas do seu documento -->
+        <base href="/" />
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>LP4</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+        <!-- Customização do CSS -->
+        <link rel="stylesheet" href="css/efeito.css">
+
+        <!-- Angular JS -->
+        <script src="js/lib/angular.min.js"></script>
+
+        <!-- Módulo principal com variável Global angular -->
+        <script src="js/main.js"></script>
+
+        <!-- Controllers-->
+        <script src="js/controllers/livro-controller.js"></script>
+        <script src="js/controllers/novo-livro-controller.js"></script>
+        <script src="js/controllers/usuario-controller.js"></script>
+
+        <!-- Diretiva Angular -->
+        <script src="js/directives/minha-diretiva.js"></script>
+        
+                <!-- Serviços -->
+        <script src="js/services/meus-servicos.js"></script>
+
+        <!-- Bibliotecas Angular JS -->
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-resource.min.js"></script>
+
+    </head>
+    <body>
+        <!-- diretiva ng-controller: permite coloar esta parte do bloco sobre responsabilidade do Controller "LivroController" -->
+        <div class="container">
+
+            <!-- diretiva que cria um blog para chamar seus artefatos de DOM para criar uma single page application" -->
+            <ng-view>
+
+            </ng-view>
+        </div><!-- fim container -->
+    </body>
+</html>

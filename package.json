@@ -1,0 +1,54 @@
+{
+  "name": "estudo",
+  "version": "1.0.0",
+  "description": "Projeto criado para estudo para os alunos da Faculdade Alfa",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haganicolau/lp4"
+  },
+  "author": "Hagamenon Nicolau",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "cordova": "^6.3.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "express-session": "^1.13.0",
+    "ionic": "^2.1.1",
+    "jwt-simple": "^0.5.0",
+    "method-override": "^2.3.5",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.14",
+    "mongoose-findorcreate": "^0.1.2",
+    "mongoose-materialized": "^0.1.8",
+    "nodemailer": "^2.4.2",
+    "nodemailer-smtp-transport": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-github2": "^0.1.10",
+    "passport-jwt": "^2.0.0",
+    "request": "^2.72.0",
+    "satellizer": "^0.14.0",
+    "xoauth2": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-sinon-chai": "^1.2.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
+  }
+}

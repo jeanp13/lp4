@@ -1,0 +1,12 @@
+<!-- Template para ser inserido na diretiva -->
+<!-- Com este template, não preciso inserir todo este código, basta inserir <meu-painel> </meu-painel> -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <!-- nome é um elemento mutável da nossa diretiva, que é configurado pelo scope -->
+    <h2 class="text-center"> {{nome}} </h2>
+  </div>
+  <!-- transclusão informa onde vai entrar os filhos de <meu-painel> </meu-painel> -->
+  <div class="panel-body" ng-transclude>
+
+  </div>
+</div>
